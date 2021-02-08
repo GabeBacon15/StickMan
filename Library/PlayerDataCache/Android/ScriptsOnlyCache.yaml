@@ -4,6 +4,20 @@ ScriptsOnlyBuild:
     - JoyStick
     - PlayerController
     - SpriteHack
+    Unity.Postprocessing.Runtime.dll:
+    - UnityEngine.Rendering.PostProcessing.AmbientOcclusion
+    - UnityEngine.Rendering.PostProcessing.AutoExposure
+    - UnityEngine.Rendering.PostProcessing.Bloom
+    - UnityEngine.Rendering.PostProcessing.ChromaticAberration
+    - UnityEngine.Rendering.PostProcessing.ColorGrading
+    - UnityEngine.Rendering.PostProcessing.DepthOfField
+    - UnityEngine.Rendering.PostProcessing.Grain
+    - UnityEngine.Rendering.PostProcessing.LensDistortion
+    - UnityEngine.Rendering.PostProcessing.MotionBlur
+    - UnityEngine.Rendering.PostProcessing.PostProcessLayer
+    - UnityEngine.Rendering.PostProcessing.PostProcessResources
+    - UnityEngine.Rendering.PostProcessing.ScreenSpaceReflections
+    - UnityEngine.Rendering.PostProcessing.Vignette
     Unity.RenderPipelines.Core.Runtime.dll:
     - UnityEngine.Rendering.UI.DebugUIHandlerBitField
     - UnityEngine.Rendering.UI.DebugUIHandlerButton
@@ -48,10 +62,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -98,6 +110,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
+    - Class: 72
+      Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
@@ -125,91 +139,95 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11384}
     - Class: 114
-      Script: {instanceID: 11500}
+      Script: {instanceID: 11390}
     - Class: 114
-      Script: {instanceID: 11572}
+      Script: {instanceID: 11494}
     - Class: 114
-      Script: {instanceID: 11706}
+      Script: {instanceID: 11566}
     - Class: 114
-      Script: {instanceID: 11738}
+      Script: {instanceID: 11700}
     - Class: 114
-      Script: {instanceID: 11784}
+      Script: {instanceID: 11732}
     - Class: 114
-      Script: {instanceID: 11940}
+      Script: {instanceID: 11778}
     - Class: 114
-      Script: {instanceID: 11994}
+      Script: {instanceID: 11934}
     - Class: 114
-      Script: {instanceID: 12198}
+      Script: {instanceID: 11988}
     - Class: 114
-      Script: {instanceID: 12550}
+      Script: {instanceID: 12192}
     - Class: 114
-      Script: {instanceID: 12602}
+      Script: {instanceID: 12544}
     - Class: 114
-      Script: {instanceID: 12670}
+      Script: {instanceID: 12596}
     - Class: 114
-      Script: {instanceID: 12804}
+      Script: {instanceID: 12664}
     - Class: 114
-      Script: {instanceID: 12936}
+      Script: {instanceID: 12798}
     - Class: 114
-      Script: {instanceID: 12976}
+      Script: {instanceID: 12930}
     - Class: 114
-      Script: {instanceID: 13178}
+      Script: {instanceID: 12970}
     - Class: 114
-      Script: {instanceID: 13236}
+      Script: {instanceID: 13174}
     - Class: 114
-      Script: {instanceID: 13304}
+      Script: {instanceID: 13232}
     - Class: 114
-      Script: {instanceID: 13432}
+      Script: {instanceID: 13300}
     - Class: 114
-      Script: {instanceID: 13712}
+      Script: {instanceID: 13428}
     - Class: 114
-      Script: {instanceID: 13740}
+      Script: {instanceID: 13488}
     - Class: 114
-      Script: {instanceID: 13770}
+      Script: {instanceID: 13708}
     - Class: 114
-      Script: {instanceID: 14122}
+      Script: {instanceID: 13736}
     - Class: 114
-      Script: {instanceID: 14200}
+      Script: {instanceID: 13766}
     - Class: 114
-      Script: {instanceID: 14224}
+      Script: {instanceID: 14118}
     - Class: 114
-      Script: {instanceID: 14370}
+      Script: {instanceID: 14196}
     - Class: 114
-      Script: {instanceID: 14404}
+      Script: {instanceID: 14220}
     - Class: 114
-      Script: {instanceID: 14412}
+      Script: {instanceID: 14366}
     - Class: 114
-      Script: {instanceID: 14458}
+      Script: {instanceID: 14400}
     - Class: 114
-      Script: {instanceID: 14776}
+      Script: {instanceID: 14408}
     - Class: 114
-      Script: {instanceID: 14860}
+      Script: {instanceID: 14454}
     - Class: 114
-      Script: {instanceID: 14918}
+      Script: {instanceID: 14772}
     - Class: 114
-      Script: {instanceID: 15136}
+      Script: {instanceID: 14856}
     - Class: 114
-      Script: {instanceID: 15352}
+      Script: {instanceID: 14914}
     - Class: 114
-      Script: {instanceID: 15406}
+      Script: {instanceID: 15132}
     - Class: 114
-      Script: {instanceID: 15584}
+      Script: {instanceID: 15318}
     - Class: 114
-      Script: {instanceID: 15640}
+      Script: {instanceID: 15350}
     - Class: 114
-      Script: {instanceID: 15644}
+      Script: {instanceID: 15404}
     - Class: 114
-      Script: {instanceID: 15674}
+      Script: {instanceID: 15582}
     - Class: 114
-      Script: {instanceID: 15708}
+      Script: {instanceID: 15638}
     - Class: 114
-      Script: {instanceID: 15832}
+      Script: {instanceID: 15642}
     - Class: 114
-      Script: {instanceID: 15848}
+      Script: {instanceID: 15672}
     - Class: 114
-      Script: {instanceID: 15854}
+      Script: {instanceID: 15706}
     - Class: 114
-      Script: {instanceID: 21140}
+      Script: {instanceID: 15830}
+    - Class: 114
+      Script: {instanceID: 15846}
+    - Class: 114
+      Script: {instanceID: 15852}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -271,12 +289,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
-  - hash:
-      serializedVersion: 2
-      Hash: 723614de6aa8ab77c2d95f1e7d3c733b
-    assemblyName: Unity.RenderPipelines.Universal.Runtime.dll
-    namespaceName: UnityEngine.Rendering.Universal
-    className: UniversalRenderPipelineAsset
   - hash:
       serializedVersion: 2
       Hash: a1f19ad47d3094e235f21b74dfc423a8
@@ -657,6 +669,12 @@ ScriptsOnlyBuild:
     className: ChromaticAberration
   - hash:
       serializedVersion: 2
+      Hash: 723614de6aa8ab77c2d95f1e7d3c733b
+    assemblyName: Unity.RenderPipelines.Universal.Runtime.dll
+    namespaceName: UnityEngine.Rendering.Universal
+    className: UniversalRenderPipelineAsset
+  - hash:
+      serializedVersion: 2
       Hash: 5e1eefcd5106de6c2e85908a3b2d3f04
     assemblyName: Unity.RenderPipelines.Core.Runtime.dll
     namespaceName: UnityEngine.Rendering.UI
@@ -981,7 +999,7 @@ ScriptsOnlyBuild:
     className: CinemachineUniversalPixelPerfect
   - hash:
       serializedVersion: 2
-      Hash: 307690068393a97287effd1277165917
+      Hash: 1c233c7a2c867e2fcf7107906068d54b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -1027,6 +1045,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Universal.Runtime.dll
     namespaceName: UnityEngine.Experimental.Rendering.Universal
     className: ShadowCaster2D
+  - hash:
+      serializedVersion: 2
+      Hash: d3e180e6fec5567a9fa0ad95725f71cf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: JoyStick
   - hash:
       serializedVersion: 2
       Hash: 8d35f16c5022311c6f4d9432be73bfcf
@@ -1213,12 +1237,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: d3e180e6fec5567a9fa0ad95725f71cf
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: JoyStick
   platform: 13
   scenePathNames:
   - Assets/Scenes/Test Scene.unity

@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 public class PlayerController : MonoBehaviour
 {
+    private Coroutine currentCorutine = null;
+    public GameObject postProcess;
+    private Volume volume;
+    private Vignette vignette;
+    private Bloom bloom;
     public JoyStick joystick;
     public float speed = 0, gravity = -9.8f, height, vy = 0;
-    private float yeetSpeed = 1, fixedDeltaTime, vignetteIntensity = 0, jumpStartX = 0;
+    private float yeetSpeed = 1, fixedDeltaTime, jumpStartX = 0;
+    public float vignetteIntensity;
     public bool jumping, kickOff;
     private Animator animator;
     private Rigidbody rb = null;
@@ -15,10 +22,13 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        volume = postProcess.GetComponent<Volume>();
+        volume.profile.TryGet(out vignette);
+        volume.profile.TryGet(out bloom);
+        rb = GetComponent<Rigidbody>();
         jumping = false;
         vignetteIntensity = 0;
         vy = gravity;
-        rb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
         this.fixedDeltaTime = Time.fixedDeltaTime;
         kickOff = false;
@@ -96,16 +106,24 @@ public class PlayerController : MonoBehaviour
 
     public void slowTime(float scale)
     {
+        if(currentCorutine != null)
+        {
+            StopCoroutine(currentCorutine);
+        }
+        currentCorutine = StartCoroutine(SmoothVignette(vignetteIntensity, .45f, 0.2f*scale));
         Debug.Log("DOWN");
         Time.timeScale = scale;
-        StartCoroutine(SmoothVignette(0f, 4.5f, .5f));
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
     }
     public void resetTime()
     {
+        if (currentCorutine != null)
+        {
+            StopCoroutine(currentCorutine);
+        }
+        currentCorutine = StartCoroutine(SmoothVignette(vignetteIntensity, 0f, 0.2f));
         Debug.Log("UP");
         Time.timeScale = 1;
-        StartCoroutine(SmoothVignette(4.5f, 0f, .5f));
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
     }
     IEnumerator SmoothVignette(float v_start, float v_end, float duration)
@@ -114,11 +132,14 @@ public class PlayerController : MonoBehaviour
         while (elapsed < duration)
         {
             vignetteIntensity = Mathf.Lerp(v_start, v_end, elapsed / duration);
+            vignette.intensity.value = vignetteIntensity;
+            bloom.intensity.value = vignetteIntensity * (3f / .45f);
             elapsed += Time.deltaTime;
             yield return null;
         }
         vignetteIntensity = v_end;
-        
+        vignette.intensity.value = vignetteIntensity;
+        currentCorutine = null;
     }
 
     public void setSpeed(System.Single s)

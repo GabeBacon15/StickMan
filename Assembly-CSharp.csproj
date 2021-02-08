@@ -63,9 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\JoyStick.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\SpriteHack.cs" />
-    <Compile Include="Assets\_Defualt\Scripts\JoyStick.cs" />
     <Compile Include="Assets\_Defualt\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\_Defualt\TutorialInfo\Scripts\Readme.cs" />
     <Reference Include="UnityEngine">
